@@ -1,23 +1,25 @@
-# Kate-macs
-A config file containing a subset of the Emacs keybindings for the KDE Kate text editor.
+# Fork说明
 
-# Getting Started
-Open Kate and from the toolbar...
-`settings > Configure Shortcuts... > Manage Schemes >> Import Scheme`
-give it the `.shortcuts` file in this repo and you're off to the races!
+- 使用时导入文件：
+```
+kate-macs.shortcuts
+```
+- 原旧文件重命名为：
+```
+old-kate-macs.shortcuts
+```
 
-# Contributing
-This is incomplete.
-I am familiar enough with Emacs to feel stunted by a lack of cursor control and multi-buffered views, but am by no means a power user and so have certainly missed many of the commands. So please feel free to make a pull request with whatever contributions if any of your favorite commands were unfortunately missed.
+# 修改内容
 
-**It's _super easy_ to make changes! Load your '.shortcuts' file into Kate, make your changes in the same GUI used for import and then export the shortcuts file and send me a pull request**
+- [书签]项会与工具栏的 Alt+B 按键冲突,取消绑定
+- [光标左移]项按键绑定没有，新增方向键左
+- [撤销]项改为 Ctrl+/
+- [重做]项改为 Ctrl+Shift+/
+- [注释]项改为 Ctrl+x+; 再按一遍为取消注释
+- [搜索框]项没有，新增 Ctrl+s
+- [复制]项改为 M+w
 
-# Current Issues
-Some commands Kate does not support, such as C-l to cycle the view orientation around the cursor.
-Larger packages like 'M-x replace-regexp' do not have support.
-Certain compensations have been made, C-s & M-% both open a find-and-replace dialog, as an example.
-
-# Working Commands
+# 按键命令
 ### kate_aliases = emacs-equivalent
 ```
 beginning_of_document = M-<
@@ -32,23 +34,21 @@ delete_next_character = C-d
 
 delete_word_right = M-d
 
-edit_cut = C-w
+剪切 = C-w
 
 edit_paste = C-w
 
 edit_select_all = C-x, C-p
 
-edit_undo = C-x, U
-
 end_of_document = M->
 
-end_of_line = C-e
+跳到行尾 = C-e
 
-file_close = C-x, C-c
+关闭文件 = C-x, C-c
 
-file_open = C-x, C-f
+打开文件 = C-x, C-f
 
-file_save = C-x, C-s
+保存文件 = C-x, C-s
 
 go_goto_line = M-g, g
 
@@ -56,9 +56,9 @@ go_next_split_view = C-x, o
 
 kate_mdi_toolview_kate_plugin_katesearch (find-and-replace) = -%;  C-s
 
-move_cursor_right = C-f
+光标右移 = C-f
 
-move_cusor_left = C-b
+光标左移 = C-b
 
 move_line_down = C-n
 
@@ -74,12 +74,12 @@ view_split_horiz = C-X, 2
 
 view_split_vert = C-X, 3
 
-word_left = M-b
-
 word_right = M-f
+
+显示搜索框 = Ctrl+s
 ```
 
-# Non-working Commands
+# 不可用命令
 ```
 page up = M-v			  : ?
 
@@ -87,9 +87,9 @@ align view to cursor = C-l 	  : no native kate equivalent
 
 cursor to start of block = M-a    : ?
 
-undo = C-_			  : ?
-
 start-end mark = C-space 	  : ? (this is the most frustrating)
 
 kill = C-k     	 		  : technically works, but has strange side-effects
+
+上移一个词 = Alt+B （M+b）
 ```
