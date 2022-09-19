@@ -77,6 +77,12 @@ view_split_vert = C-X, 3
 word_right = M-f
 
 显示搜索框 = Ctrl+s
+
+全选文本 = C-x, C-p
+
+撤销 = C-/ 或 C-z
+
+重做 = C+Alt+/
 ```
 
 # 不可用命令
